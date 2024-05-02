@@ -1,12 +1,13 @@
 import './cell.dart';
 import './CreateList.dart';
 import './FindCellState.dart';
+import './round.dart';
 import './neighbors.dart';
 import './setSimulation.dart';
 
 // Point d'entrée principal du programme
 void main() {
-  int numberOfCells = 5; // Définir le nombre de cellules dans la liste
+  int numberOfCells = 6; // Définir le nombre de cellules dans la liste
   List<Cell> list = cellsList(numberOfCells);  // Créer la liste
 
   // Définir l'indice de la cellule que nous voulons examiner
@@ -25,4 +26,9 @@ void main() {
   for (int i = 0; i < updatedCells.length; i++) {
     print('Cellule $i : ${updatedCells[i].state}');
   }
+
+  // Choisir le nombre de rounds
+  int rounds = promptForRounds(); 
+  print("Vous avez choisi $rounds rounds.");
 }
+

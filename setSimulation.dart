@@ -26,3 +26,17 @@ List<int> chooseBurningCells(int total) {
   return results; 
 }
 
+
+// fonction pour changer l'état des cellules à enflammer avant le début de la simulation de inflammable à enflammées
+List<Cell> setBurningCell(List<Cell> cellList, List<int> startingCells) {
+  if (startingCells.length == 2 &&
+      startingCells.every((index) => index >= 0 && index < cellList.length)) {
+    for (int index in startingCells) {
+      cellList[index].state = 'enflammée';
+    }
+  } else {
+    print('Les indices donnés ne sont pas valides.');
+  }
+
+  return cellList;
+}

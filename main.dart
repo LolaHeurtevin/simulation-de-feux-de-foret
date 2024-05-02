@@ -5,10 +5,9 @@ import './round.dart';
 import './neighbors.dart';
 import './setSimulation.dart';
 
-// Point d'entrée principal du programme
 void main() {
   int numberOfCells = 6; // Définir le nombre de cellules dans la liste
-  List<Cell> list = cellsList(numberOfCells);  // Créer la liste
+  List<Cell> list = cellsList(numberOfCells); 
 
   // Définir l'indice de la cellule que nous voulons examiner
   int index = 2;
@@ -18,7 +17,6 @@ void main() {
 
   // print( 'Indices des voisines de la cellule ${neighbors(index, 5)} : ${result}');
 
-  // print('la cellules enflammée est ${chooseBurningCells(5)}');
   List<int> startingCells = chooseBurningCells(5);
   List<Cell> updatedCells = setBurningCell(list, startingCells);
 
@@ -30,5 +28,9 @@ void main() {
   // Choisir le nombre de rounds
   int rounds = promptForRounds(); 
   print("Vous avez choisi $rounds rounds.");
+
+  InitialisationSimulation initialisation = initialiserSimulation();
+  print('Climat choisi : ${initialisation.climat}');
+  print('Terrain choisi : ${initialisation.terrain}');
 }
 

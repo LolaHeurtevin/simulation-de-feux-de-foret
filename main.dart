@@ -13,3 +13,4 @@ void main() {
   // Affiche l'état de la cellule à l'indice spécifié
   print('État de la cellule $index : ${find(list, index).state}');
 }
+

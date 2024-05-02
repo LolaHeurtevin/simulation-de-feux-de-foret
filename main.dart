@@ -4,7 +4,7 @@ import './FindCellState.dart';
 
 // Point d'entrée principal du programme
 void main() {
-  int numberOfCells = 5; // Définir le nombre de cellules dans la liste
+  int numberOfCells = 6; // Définir le nombre de cellules dans la liste
   List<Cell> list = cellsList(numberOfCells);  // Créer la liste
 
   // Définir l'indice de la cellule que nous voulons examiner

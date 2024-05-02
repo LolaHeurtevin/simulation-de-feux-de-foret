@@ -1,6 +1,7 @@
 import './cell.dart';
 import './CreateList.dart';
 import './FindCellState.dart';
+import './round.dart';
 
 // Point d'entrée principal du programme
 void main() {
@@ -12,5 +13,9 @@ void main() {
   
   // Affiche l'état de la cellule à l'indice spécifié
   print('État de la cellule $index : ${find(list, index).state}');
+
+  // Choisir le nombre de rounds
+  int rounds = promptForRounds(); 
+  print("Vous avez choisi $rounds rounds.");
 }
 

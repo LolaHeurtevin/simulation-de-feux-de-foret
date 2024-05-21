@@ -19,24 +19,23 @@ void main() {
 
   // print( 'Indices des voisines de la cellule ${neighbors(index, 5)} : ${result}');
 
-  List<int> startingCells = chooseBurningCells(5);
+  List<int> startingCells = chooseBurningCells(1);
   List<Cell> updatedCells = setBurningCell(list, startingCells);
 
   // Afficher l'état mis à jour des cellules
   for (int i = 0; i < updatedCells.length; i++) {
     print('Cellule $i : ${updatedCells[i].state}');
   }
+  
+  //Initialistaion 
+  InitialisationSimulation initialisation = initialiserSimulation();
+  print('Climat choisi : ${initialisation.climat}');
+  print('Terrain choisi : ${initialisation.terrain}');
 
   // Choisir le nombre de rounds
   int rounds = promptForRounds(); 
   print("Vous avez choisi $rounds rounds.");
 
-  InitialisationSimulation initialisation = initialiserSimulation();
-  print('Climat choisi : ${initialisation.climat}');
-  print('Terrain choisi : ${initialisation.terrain}');
-
-  
-
-// Lancer la simulation des rounds avec mise à jour des états
+  // Lancer la simulation des rounds avec mise à jour des états
   simulateRounds(updatedCells, rounds);
 }

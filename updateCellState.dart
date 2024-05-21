@@ -21,6 +21,7 @@ void updateCellState(Cell cell, int round) {
   cell.lastUpdated +=1;
 }
 
+
 // fonction qui permet le changement ou non d'état d'une cellule après qu'elle ai reçu un brandon
 // la cellule ayant reçu le brandon a différentes chances de s'enflammer en fonction du climat choisi
 bool willInflammeAfterReceivingBrandon (Climat climat) {

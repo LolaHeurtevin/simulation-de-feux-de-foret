@@ -29,7 +29,7 @@ void simulateRounds(List<Cell> cells, int rounds) {
     for (int i = 0; i < cells.length; i++) {
       updateCellState(cells[i], round);
     }
-
+    // Affichage de l'état des cellules à chaque round
     print("État des cellules au Round $round:");
     for (int i = 0; i < cells.length; i++) {
       print('Cellule $i : ${cells[i].state}');

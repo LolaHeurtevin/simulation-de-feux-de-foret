@@ -4,6 +4,8 @@ import './FindCellState.dart';
 import './round.dart';
 import './neighbors.dart';
 import './setSimulation.dart';
+import './round.dart';
+import './updateCellState.dart';
 
 void main() {
   int numberOfCells = 6; // Définir le nombre de cellules dans la liste
@@ -28,11 +30,13 @@ void main() {
   // Choisir le nombre de rounds
   int rounds = promptForRounds(); 
   print("Vous avez choisi $rounds rounds.");
-  // Lancer la simulation des rounds avec mise à jour des états
-  simulateRounds(updatedCells, rounds);
-  
+
   InitialisationSimulation initialisation = initialiserSimulation();
   print('Climat choisi : ${initialisation.climat}');
   print('Terrain choisi : ${initialisation.terrain}');
-}
 
+  
+
+// Lancer la simulation des rounds avec mise à jour des états
+  simulateRounds(updatedCells, rounds);
+}

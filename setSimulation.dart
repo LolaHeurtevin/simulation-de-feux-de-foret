@@ -1,7 +1,7 @@
 import 'dart:io';
 import './cell.dart';
 
-// fonction qui détermine quelles cases sont enflammées au début de la simulation
+// fonction qui demander à l'utilisateur quelles cases sont enflammées au début de la simulation
 List<int> chooseBurningCells(int total) {
   List<int> results = [];  // Liste pour stocker les indices des cellules enfalmmées
 

@@ -7,10 +7,21 @@ enum Climat { humid, normal, dry, veryDry }
 
 // Fonction pour mettre à jour l'état d'une cellule spécifique
 void updateCellState(Cell cell, int round) {
+  Random random = Random();
+
   if (round >= 3 && cell.state == 'enflammée') {
-    cell.state = 'brûlé et chaud';  // Change l'état à 'brûlé et chaud'
+    cell.state = 'brûlé et chaud'; // Change l'état à 'brûlé et chaud'
+  } else if (cell.state == 'brûlé et chaud') {
+    // Générer un nombre aléatoire entre 0 et 1
+    double probability = random.nextDouble();
+
+    if (probability <= 0.4) {
+      cell.state = 'brûlé et froid'; // Change l'état à 'brûlé et froid' (inéritable)
+    }
+    // Sinon, la cellule reste dans l'état 'brûlé et chaud'
   }
 }
+
 
 // fonction qui permet le changement ou non d'état d'une cellule après qu'elle ai reçu un brandon
 // la cellule ayant reçu le brandon a différentes chances de s'enflammer en fonction du climat choisi

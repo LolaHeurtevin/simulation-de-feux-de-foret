@@ -1,24 +1,40 @@
 import 'dart:math';
 import './cell.dart';
+import 'isBrandonSent.dart';
+import 'main.dart';
+import 'neighbors.dart';
 import 'setSimulation.dart';
 import './randomNumber.dart';
 
-enum Climat { humid, normal, dry, veryDry }
+// enum Climat { humid, normal, dry, veryDry }
 
 
 // Fonction pour mettre à jour l'état d'une cellule spécifique
-void updateCellState(Cell cell, int round) {
+void updateCellState(Cell cell, Wind wind, Climat climat) {
   if (cell.state == 'enflammée' && cell.lastUpdated >= 2) {
     cell.state = 'brûlé et chaud'; 
     cell.lastUpdated = 0;
   }
 
-  if (cell.state == 'brûlé et chaud' && cell.lastUpdated >=1 && cellTurnsCold() == true) {
-    cell.state = 'brûlé et froid';
-    cell.lastUpdated = 0;
+  if (cell.state == 'brûlé et chaud') {
+    if (cell.lastUpdated >=1 && cellTurnsCold() == true) {
+      cell.state = 'brûlé et froid';
+      cell.lastUpdated = 0;
+    } else {
+      if (isBrandonSent(cell, wind)) {
+      
+        var cellNeighbors = neighbors(cell.index, list);
+        for (int i=0; i<cellNeighbors.length; i++) {
+          if (willInflammeAfterReceivingBrandon(climat)) {
+            cellNeighbors[i].state = 'enflammée';
+            cellNeighbors[i].lastUpdated = 0;
+          }
+        }
+      }
+    }
   }
 
-  cell.lastUpdated +=1;
+  cell.lastUpdated += 1;
 }
 
 

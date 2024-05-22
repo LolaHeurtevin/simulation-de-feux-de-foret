@@ -7,9 +7,11 @@ import './setSimulation.dart';
 import './round.dart';
 import './updateCellState.dart';
 
-void main() {
-  int numberOfCells = 6; // Définir le nombre de cellules dans la liste
-  List<Cell> list = cellsList(numberOfCells); 
+// Variables gloables
+int numberOfCells = 24;
+List<Cell> list = cellsList(numberOfCells);
+
+void main() { 
 
   // Définir l'indice de la cellule que nous voulons examiner
   //int index = 2;
@@ -17,7 +19,7 @@ void main() {
   // Affiche l'état de la cellule à l'indice spécifié
   // print('État de la cellule $index : ${find(list, index).state}');
 
-  // print( 'Indices des voisines de la cellule ${neighbors(index, 5)} : ${result}');
+  // print( 'Indices des voisines de la cellule ${neighbors(index, 24)} : ${result}');
 
   List<int> startingCells = chooseBurningCells(1);
   List<Cell> updatedCells = setBurningCell(list, startingCells);
@@ -37,5 +39,5 @@ void main() {
   print("Vous avez choisi $rounds rounds.");
 
   // Lancer la simulation des rounds avec mise à jour des états
-  simulateRounds(updatedCells, rounds);
+  simulateRounds(updatedCells, rounds, initialisation.wind, initialisation.climat);
 }

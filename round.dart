@@ -1,6 +1,7 @@
 import 'dart:io';
 import './cell.dart';
 import './updateCellState.dart';
+import 'setSimulation.dart';
 
 // Fonction pour demander le nombre de rounds à l'utilisateur
 int promptForRounds() {
@@ -24,15 +25,22 @@ int promptForRounds() {
 }
 
 // Fonction pour simuler les rounds
-void simulateRounds(List<Cell> cells, int rounds) {
+void simulateRounds(List<Cell> cells, int rounds, Wind wind, Climat climat) {
   for (int round = 1; round <= rounds; round++) {
-    for (int i = 0; i < cells.length; i++) {
-      updateCellState(cells[i], round);
+    if (round == 1 ) {
+      for (int i = 0; i < cells.length; i++) {
+        cells[i].index = i;
+      }
     }
+    for (int i = 0; i < cells.length; i++) {
+      updateCellState(cells[i], wind, climat);
+    }
+    
     // Affichage de l'état des cellules à chaque round
     print("État des cellules au Round $round:");
     for (int i = 0; i < cells.length; i++) {
       print('Cellule $i : ${cells[i].state}');
+      print('Cellule $i : ${cells[i].lastUpdated}');
     }
   }
 }

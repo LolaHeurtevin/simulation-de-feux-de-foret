@@ -47,11 +47,14 @@ enum Climat { humid, normal, dry, veryDry }
 
 enum Terrain { continu, close, spaced, sparse }
 
+enum Wind { none, moderate, strong, violent }
+
 class InitialisationSimulation {
   Climat climat;
   Terrain terrain;
+  Wind wind;
 
-  InitialisationSimulation(this.climat, this.terrain);
+  InitialisationSimulation(this.climat, this.terrain, this.wind);
 }
 
 Climat choisirClimat() {
@@ -104,8 +107,34 @@ Terrain choisirTerrain() {
   }
 }
 
+Wind choisirWind() {
+  print('Choisissez le type de vent :');
+  print('1. Null');
+  print('2. Modéré');
+  print('3. Fort');
+  print('4. Violent');
+  
+  stdout.write('Entrez le numéro correspondant au type de terrain : ');
+  int choix = int.parse(stdin.readLineSync()!);
+
+  switch (choix) {
+    case 1:
+      return Wind.none;
+    case 2:
+      return Wind.moderate;
+    case 3:
+      return Wind.strong;
+    case 4:
+      return Wind.violent;
+    default:
+      print('Choix invalide, sélection par défaut : modéré');
+      return Wind.moderate;
+  }
+}
+
 InitialisationSimulation initialiserSimulation() {
   Climat climatChoisi = choisirClimat();
   Terrain terrainChoisi = choisirTerrain();
-  return InitialisationSimulation(climatChoisi, terrainChoisi);
+  Wind ventChoisi = choisirWind();
+  return InitialisationSimulation(climatChoisi, terrainChoisi, ventChoisi);
 }

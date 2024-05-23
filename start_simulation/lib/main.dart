@@ -333,7 +333,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       const Text(
-                        'Veuillez sélectionner les indices des cellules à enflammer :',
+                        'Veuillez sélectionner les indices des cellules à enflammer (Attention à ne pas choisir une case inerte !) :',
                         style: TextStyle(fontSize: 14),
                       ),
                       Wrap(

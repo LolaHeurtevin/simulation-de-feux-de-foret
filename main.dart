@@ -1,5 +1,7 @@
+import 'dart:io';
+
 import './cell.dart';
-import './CreateList.dart';
+import './createList.dart';
 import './FindCellState.dart';
 import './round.dart';
 import './neighbors.dart';
@@ -9,7 +11,7 @@ import './updateCellState.dart';
 
 // Variables gloables
 int numberOfCells = 24;
-List<Cell> list = cellsList(numberOfCells);
+List<Cell> list = [];
 
 void main() { 
 
@@ -21,18 +23,18 @@ void main() {
 
   // print( 'Indices des voisines de la cellule ${neighbors(index, 24)} : ${result}');
 
-  List<int> startingCells = chooseBurningCells(1);
+  //Initialistaion 
+  List<int> startingCells = chooseBurningCells(2);
+  InitialisationSimulation initialisation = initialiserSimulation();
+
+  list = cellsList(numberOfCells, initialisation.terrain);
+
   List<Cell> updatedCells = setBurningCell(list, startingCells);
 
   // Afficher l'état mis à jour des cellules
   for (int i = 0; i < updatedCells.length; i++) {
     print('Cellule $i : ${updatedCells[i].state}');
   }
-  
-  //Initialistaion 
-  InitialisationSimulation initialisation = initialiserSimulation();
-  print('Climat choisi : ${initialisation.climat}');
-  print('Terrain choisi : ${initialisation.terrain}');
 
   // Choisir le nombre de rounds
   int rounds = promptForRounds(); 

@@ -40,7 +40,7 @@ void simulateRounds(List<Cell> cells, int rounds, Wind wind, Climat climat) {
     print("État des cellules au Round $round:");
     for (int i = 0; i < cells.length; i++) {
       print('Cellule $i : ${cells[i].state}');
-      print('Cellule $i : ${cells[i].lastUpdated}');
+      // print('Cellule $i : ${cells[i].lastUpdated}');
     }
   }
 }

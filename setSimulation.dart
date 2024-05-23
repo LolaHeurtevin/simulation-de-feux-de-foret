@@ -5,7 +5,7 @@ import './cell.dart';
 List<int> chooseBurningCells(int total) {
   List<int> results = [];  // Liste pour stocker les indices des cellules enfalmmées
 
-  for (int i=0; i<=1; i++) {
+  for (int i=1; i<=total; i++) {
     stdout.write('Veuillez saisir l\'index de la cellule à enflammer : ');
 
     String? userInput = stdin.readLineSync();
@@ -57,7 +57,7 @@ class InitialisationSimulation {
   InitialisationSimulation(this.climat, this.terrain, this.wind);
 }
 
-Climat choisirClimat() {
+Climat chooseClimat() {
   print('Choisissez le type de climat :');
   print('1. Humide');
   print('2. Normal');
@@ -82,7 +82,7 @@ Climat choisirClimat() {
   }
 }
 
-Terrain choisirTerrain() {
+Terrain chooseTerrain() {
   print('Choisissez le type de terrain :');
   print('1. Continue');
   print('2. Peu espacée');
@@ -107,14 +107,14 @@ Terrain choisirTerrain() {
   }
 }
 
-Wind choisirWind() {
+Wind chooseWind() {
   print('Choisissez le type de vent :');
   print('1. Null');
   print('2. Modéré');
   print('3. Fort');
   print('4. Violent');
   
-  stdout.write('Entrez le numéro correspondant au type de terrain : ');
+  stdout.write('Entrez le numéro correspondant au type de vent : ');
   int choix = int.parse(stdin.readLineSync()!);
 
   switch (choix) {
@@ -133,8 +133,8 @@ Wind choisirWind() {
 }
 
 InitialisationSimulation initialiserSimulation() {
-  Climat climatChoisi = choisirClimat();
-  Terrain terrainChoisi = choisirTerrain();
-  Wind ventChoisi = choisirWind();
+  Climat climatChoisi = chooseClimat();
+  Terrain terrainChoisi = chooseTerrain();
+  Wind ventChoisi = chooseWind();
   return InitialisationSimulation(climatChoisi, terrainChoisi, ventChoisi);
 }

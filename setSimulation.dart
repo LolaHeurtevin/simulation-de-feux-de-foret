@@ -1,9 +1,15 @@
 import 'dart:io';
 import './cell.dart';
+import 'main.dart';
 
-// fonction qui demander à l'utilisateur quelles cases sont enflammées au début de la simulation
+/**
+ * fonction chooseBurningCells
+ * permet à l'utilisateur de choisir les cellules enflamées au début de la simualtion
+ * @param total le nombre total de cellules qui seront enflammées
+ * @return results la liste des indices des cellules à enflammer
+ */
 List<int> chooseBurningCells(int total) {
-  List<int> results = [];  // Liste pour stocker les indices des cellules enfalmmées
+  List<int> results = [];
 
   for (int i=1; i<=total; i++) {
     stdout.write('Veuillez saisir l\'index de la cellule à enflammer : ');
@@ -27,9 +33,15 @@ List<int> chooseBurningCells(int total) {
 }
 
 
-// fonction pour changer l'état des cellules à enflammer avant le début de la simulation de inflammable à enflammées
+/**
+ * fonction setBurningCell
+ * change l'état des cellules à enflammer avant le début de la simulation de inflammable à enflammées
+ * @param cellList la liste des cellules
+ * @param startingCells la liste des indices des cellules enflammées au début de la simulation
+ * @return cellList la liste des cellules
+ */
 List<Cell> setBurningCell(List<Cell> cellList, List<int> startingCells) {
-  if (startingCells.length == 2 &&
+  if (startingCells.length == initialNumberOfBurningCells &&
       startingCells.every((index) => index >= 0 && index < cellList.length)) {
     for (int index in startingCells) {
       cellList[index].state = 'enflammée';

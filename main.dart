@@ -1,42 +1,26 @@
-import 'dart:io';
-
 import './cell.dart';
 import './createList.dart';
-import './FindCellState.dart';
 import './round.dart';
-import './neighbors.dart';
 import './setSimulation.dart';
-import './round.dart';
-import './updateCellState.dart';
 
 // Variables gloables
 int numberOfCells = 24;
+int initialNumberOfBurningCells = 2;
 List<Cell> list = [];
 
 void main() { 
 
-  // Définir l'indice de la cellule que nous voulons examiner
-  //int index = 2;
-  
-  // Affiche l'état de la cellule à l'indice spécifié
-  // print('État de la cellule $index : ${find(list, index).state}');
-
-  // print( 'Indices des voisines de la cellule ${neighbors(index, 24)} : ${result}');
-
-  //Initialistaion 
-  List<int> startingCells = chooseBurningCells(2);
+  // Initialistaion 
+  // L'utilisateur choisi les cellules qu'il veut enflammer au début de la simulation
+  List<int> startingCells = chooseBurningCells(initialNumberOfBurningCells);
+  // L'utilisateur choisi les conditions de la simulation (terrain, vent, climat)
   InitialisationSimulation initialisation = initialiserSimulation();
 
+  // Création de la liste des cellules en fonction des paramètres
   list = cellsList(numberOfCells, initialisation.terrain);
-
   List<Cell> updatedCells = setBurningCell(list, startingCells);
 
-  // Afficher l'état mis à jour des cellules
-  for (int i = 0; i < updatedCells.length; i++) {
-    print('Cellule $i : ${updatedCells[i].state}');
-  }
-
-  // Choisir le nombre de rounds
+  // L'utilisateur choisi le nombre de rounds
   int rounds = promptForRounds(); 
   print("Vous avez choisi $rounds rounds.");
 

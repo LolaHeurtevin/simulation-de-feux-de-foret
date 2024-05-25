@@ -3,7 +3,11 @@ import './cell.dart';
 import './updateCellState.dart';
 import 'setSimulation.dart';
 
-// Fonction pour demander le nombre de rounds à l'utilisateur
+/**
+ * function promptForRounds
+ * demande à l'utilisateur de choisir le nombre de rounds
+ * @return numberOfRounds le nombre de rounds
+ */
 int promptForRounds() {
   int numberOfRounds = 0; 
 
@@ -24,7 +28,14 @@ int promptForRounds() {
   return numberOfRounds;
 }
 
-// Fonction pour simuler les rounds
+/**
+ * function simulateRounds
+ * enclenche la simulation et affiche l'état des cellules à chaque round
+ * @param cells la liste des cellules
+ * @param rounds le nombre de rounds
+ * @param wind le vent choisi pour la simulation
+ * @param climat le climat choisi pour la simulation
+ */
 void simulateRounds(List<Cell> cells, int rounds, Wind wind, Climat climat) {
   for (int round = 1; round <= rounds; round++) {
     if (round == 1 ) {
@@ -36,11 +47,9 @@ void simulateRounds(List<Cell> cells, int rounds, Wind wind, Climat climat) {
       updateCellState(cells[i], wind, climat);
     }
     
-    // Affichage de l'état des cellules à chaque round
     print("État des cellules au Round $round:");
     for (int i = 0; i < cells.length; i++) {
       print('Cellule $i : ${cells[i].state}');
-      // print('Cellule $i : ${cells[i].lastUpdated}');
     }
   }
 }

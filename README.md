@@ -1,6 +1,11 @@
-# Projet de simulation de feux de foret
+# Projet de simulation de feux de foret version Dart sans Flutter
 
 Ce projet a pour ambition de réaliser un simulateur de feux de forêt. Les utilisateurs peuvent sélectionner les cellules à enflammer au début de la simulation, configurer les paramètres de simulation (climat, terrain, vent), et définir le nombre de tours, puis exécuter la simulation.
+
+# Attention
+
+Le code Dart à la racine contient uniquement la logique en Dart et peut être exécuté directement en Dart que dans le terminal. Pour cela, allez à la racine du projet `simulation-de-feux-de-foret` et exécutez `main.dart`. 
+Par contre, notre application Flutter finale se trouve dans ce dossier `simulation-de-feux-de-foret/start_simulation`.
 
 ## Table des matières
 - [Installer le projet](##installer-le-projet)
@@ -29,7 +34,7 @@ dart main.dart
 
 ## Compiler le projet vers une plateforme cible
 
-Les instructions pour compiler le projet vers une plateforme cible se trouvent dans ./start_simulation/README.MD dans la section "Configuration du projet".
+Les instructions pour compiler le projet en Flutter avec une interface graphique se trouvent dans ./start_simulation/README.MD dans la section "Configuration du projet".
 
 ## Lancer les tests
 
@@ -45,6 +50,6 @@ Lien vers le cahier des charges : https://docs.google.com/document/d/1S-3BDyFjcK
 - Documentation de Dart : https://dart.dev/guides
 - Stack Overflow (pour la fonction randomNumber)
 
-## Difficultés et commentaires
+## Difficultés et commentaires version Dart
 
 La partie la plus compliqué du projet a été la gestion du vent. Dans l'énoncé, chaque force de vent entraîne un calcul différent des cellules voisines et des probabilités d'envoi des brandons pour chaque cellule. En raison des contraintes de temps que nous avons et et des autres projets et dossiers sur lesquels nous devions travailler simulatnément, nous avons fait le choix d'adapter l'énoncé pour que la liste des cellules voisines soit toujours la même et que seule la probabilité d'envoi des brandons change avec la force du vent.

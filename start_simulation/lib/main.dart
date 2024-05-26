@@ -183,22 +183,26 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  List<int> getNeighbors(int index, int length) {
-    List<int> neighbors = [];
-    if (index % 6 != 0) {
-      neighbors.add(index - 1); // Left neighbor
-    }
-    if (index % 6 != 5) {
-      neighbors.add(index + 1); // Right neighbor
-    }
-    if (index >= 6) {
-      neighbors.add(index - 6); // Top neighbor
-    }
-    if (index < length - 6) {
-      neighbors.add(index + 6); // Bottom neighbor
-    }
-    return neighbors;
+List<int> getNeighbors(int index, int length) {
+  List<int> neighbors = [];
+  int numRows = (length / 6).ceil();
+
+  if (index % 6 != 0) {
+    neighbors.add(index - 1); // Left neighbor
   }
+  if (index % 6 != 5) {
+    neighbors.add(index + 1); // Right neighbor
+  }
+  if (index >= 6) {
+    neighbors.add(index - 6); // Top neighbor
+  }
+  if (index < length - 6) {
+    neighbors.add(index + 6); // Bottom neighbor
+  }
+
+  return neighbors;
+}
+
 
   void updateCellState(Cell cell, Wind wind, Climat climat, int round) {
     if (cell.state == 'enflammée') {

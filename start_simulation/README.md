@@ -5,7 +5,8 @@
 
 Cette application Flutter simule un feu de forêt. Les utilisateurs peuvent sélectionner les cellules à enflammer, configurer les paramètres de simulation (climat, terrain, vent), et définir le nombre de tours, puis exécuter la simulation. L'état de la grille peut être enregistré dans un fichier.
 
-![image](https://github.com/LolaHeurtevin/simulation-de-feux-de-foret/assets/143880988/cec41da9-61b6-4dfb-89c9-da484c4b16af)
+![image](https://github.com/LolaHeurtevin/simulation-de-feux-de-foret/assets/143880988/9a8c0e95-4b07-4018-a85a-1cbeb9bc4940)
+
 
 ## Prérequis
 

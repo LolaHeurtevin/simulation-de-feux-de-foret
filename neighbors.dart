@@ -1,6 +1,11 @@
-// Fonction pour obtenir les indices des cellules voisines d'une cellule donnée
 import 'cell.dart';
 
+/**
+ * fonction neighbors
+ * @param index l'indice de la cellule dont on veut trouver les voisins
+ * @param cells la liste des cellules
+ * @return results la liste des cellules voisines
+ */
 List<Cell> neighbors(int index, List<Cell> cells) {
   List<Cell> results = [];
   int total = cells.length;

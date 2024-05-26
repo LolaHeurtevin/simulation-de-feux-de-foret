@@ -1,4 +1,3 @@
-import 'dart:math';
 import './cell.dart';
 import 'isBrandonSent.dart';
 import 'main.dart';
@@ -6,10 +5,13 @@ import 'neighbors.dart';
 import 'setSimulation.dart';
 import './randomNumber.dart';
 
-// enum Climat { humid, normal, dry, veryDry }
-
-
-// Fonction pour mettre à jour l'état d'une cellule spécifique
+/** 
+ * fonction updateCellState
+ * met à jour l'état d'une cellule spécifique (à chaque round) en fonction de son état actuel et des conditions de la simulation
+ * @param cell la cellule
+ * @param wind le vent
+ * @param climat le climat
+ */
 void updateCellState(Cell cell, Wind wind, Climat climat) {
   if (cell.state == 'enflammée' && cell.lastUpdated >= 2) {
     cell.state = 'brûlé et chaud'; 
@@ -38,8 +40,13 @@ void updateCellState(Cell cell, Wind wind, Climat climat) {
 }
 
 
-// fonction qui permet le changement ou non d'état d'une cellule après qu'elle ai reçu un brandon
-// la cellule ayant reçu le brandon a différentes chances de s'enflammer en fonction du climat choisi
+/**
+ * fonction willInflammeAfterReceivingBrandon
+ * permet le changement ou non d'état d'une cellule après qu'elle ai reçu un brandon
+ * la cellule ayant reçu le brandon a différentes chances de s'enflammer en fonction du climat choisi
+ * @param climat le climat choisi
+ * @return un booléen
+ */
 bool willInflammeAfterReceivingBrandon (Climat climat) {
 
   switch (climat) {
@@ -59,8 +66,7 @@ bool willInflammeAfterReceivingBrandon (Climat climat) {
 /**
  * fonction cellTurnsCold
  * détermine si une cellule passe dans l'état brulé et froid
- * @param
- * @return bool
+ * @return un booléen
  */
 bool cellTurnsCold() {
   return randomNumber(0, 100) <= 40;

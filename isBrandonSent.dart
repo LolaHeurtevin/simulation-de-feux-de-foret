@@ -1,14 +1,12 @@
 import './cell.dart';
-import 'neighbors.dart';
-import 'main.dart';
 import 'randomNumber.dart';
 import 'setSimulation.dart';
 
 /**
  * fonction isBrandonSent 
- * détermine si une case enflammée envoie un brandon
- * @param
- * @return brandon bool
+ * détermine si une case dans l'état chaud et brûlé envoie un brandon
+ * @param cell la cellule dans l'état chaud et brûlé
+ * @return un booléen
  */
 
 bool isBrandonSent(Cell cell, Wind wind ) {

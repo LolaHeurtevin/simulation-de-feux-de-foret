@@ -95,7 +95,7 @@ Représente chaque cellule dans la grille avec des propriétés telles que l'ét
 - `getTextColorForState` - Renvoie la couleur du texte pour une cellule en fonction de son état.
 - `_buildColorLegend` - Construit le widget de légende des couleurs.
 
-## Sauvegarde de l'État de la Grille
+## Sauvegarde de l'état de la Grille
 
 L'application permet de sauvegarder l'état final de la grille dans un fichier texte :
 

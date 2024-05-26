@@ -48,7 +48,17 @@ Par contre, notre application Flutter finale se trouve dans ce dossier `simulati
    ```
 
    Alternativement, vous pouvez utiliser le bouton "Run" dans votre IDE.
+   
+## Test unitaire ( neighbors_test.dart )
 
+On a effectué le test unitaire qui permet de tester la récuperation d'une cellule et de ces voisins. 
+Le test se trouve dans `./start_simulation/test/neighbors_test.dart` et vérifie la fonctionnalité de la méthode getNeighbors qui récupère les voisins d'une cellule dans la grille de simulation. Cela garantit que les voisins sont correctement identifiés. 
+
+Commande d'execution de test ( N'oubliez pas d'aller à la racine du dossier `./start_simulation` :
+
+```bash
+flutter test test/neighbors_test.dart
+```
 ## Structure de l'application
 
 ### `main.dart`

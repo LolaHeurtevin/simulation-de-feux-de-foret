@@ -37,10 +37,16 @@ Les instructions pour compiler le projet en Flutter avec une interface graphique
 ![image](https://github.com/LolaHeurtevin/simulation-de-feux-de-foret/assets/143880988/9a8c0e95-4b07-4018-a85a-1cbeb9bc4940)
 
 
-## Lancer les tests
+## Lancer les test
 
-Normalement, pour effectuer des tests il faut installer le package test de Dart puis lancer "dart test" à la racine du projet, mais nous avons rencontré des problèmes que nous n'avons pas du résoudre et qui font que les tests semblent mal s'exécuter.
+On a effectué le test unitaire qui permet de tester la récuperation d'une cellule et de ces voisins. 
+Le test se trouve dans `./start_simulation/test/neighbors_test.dart` et vérifie la fonctionnalité de la méthode getNeighbors qui récupère les voisins d'une cellule dans la grille de simulation. Cela garantit que les voisins sont correctement identifiés. 
 
+Commande d'execution de test ( N'oubliez pas d'aller à la racine du dossier `./start_simulation` :
+
+```bash
+flutter test test/neighbors_test.dart
+```
 ## Cahier des charges
 
 Lien vers le cahier des charges : https://docs.google.com/document/d/1S-3BDyFjcKKO-Vv2XViiJzR556nLiNMrrN34vWx06OU/edit?usp=sharing

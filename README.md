@@ -27,11 +27,9 @@ Pour effectuer la simulation depuis un terminal (sans interface graphique), effe
 dart main.dart
 ~~~
 
-Pour lancer le projet sur l'application, référez vous au README du dossier start_simulation.
-
 ## Compiler le projet vers une plateforme cible
 
-Référez vous au README du dossier start_simulation.
+Les instructions pour compiler le projet vers une plateforme cible se trouvent dans ./start_simulation/README.MD dans la section "Configuration du projet".
 
 ## Lancer les tests
 

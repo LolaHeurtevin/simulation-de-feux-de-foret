@@ -1,5 +1,5 @@
 
-# Documentation pour la Simulation de Feu de Forêt en Flutter
+# Documentation pour la simulation de feu de forêt en Flutter
 
 ## Aperçu
 
@@ -20,7 +20,7 @@ Assurez-vous d'avoir les éléments suivants installés sur votre système :
 Le code Dart à la racine contient uniquement la logique en Dart et peut être exécuté directement en Dart que dans le terminal. Pour cela, allez à la racine du projet `simulation-de-feux-de-foret` et exécutez `main.dart`. 
 Par contre, notre application Flutter finale se trouve dans ce dossier `simulation-de-feux-de-foret/start_simulation`.
 
-### Configuration du Projet
+### Configuration du projet
 
 1. **Cloner le dépôt** en utilisant le lien suivant :
    ```bash
@@ -48,7 +48,7 @@ Par contre, notre application Flutter finale se trouve dans ce dossier `simulati
 
    Alternativement, vous pouvez utiliser le bouton "Run" dans votre IDE.
 
-## Structure de l'Application
+## Structure de l'application
 
 ### `main.dart`
 
@@ -108,22 +108,22 @@ Pour sauvegarder l'état de la grille :
 
 ## Utilisation
 
-1. **Choisir les Paramètres** :
+1. **Choisir les paramètres** :
    - Climat : Sélectionnez la condition climatique dans le menu déroulant.
    - Terrain : Sélectionnez la densité du terrain dans le menu déroulant.
    - Vent : Sélectionnez l'intensité du vent dans le menu déroulant.
 
-2. **Entrer les Tours** : Entrez le nombre de tours pour la simulation dans le champ de texte.
+2. **Entrer les tours** : Entrez le nombre de tours pour la simulation dans le champ de texte.
 
-3. **Sélectionner les Cellules à Enflammer** : Choisissez deux cellules à enflammer en cliquant sur les indices correspondants dans la grille, par exemple les cellules 6 et 11.
+3. **Sélectionner les cellules à enflammer** : Choisissez deux cellules à enflammer en cliquant sur les indices correspondants dans la grille, par exemple les cellules 6 et 11.
 
-4. **Confirmer la Configuration** : Cliquez sur le bouton "Confirmer" pour démarrer la simulation.
+4. **Confirmer la configuration** : Cliquez sur le bouton "Confirmer" pour démarrer la simulation.
 
-5. **Observer les Changements** : Observez les changements d'état dans la grille.
+5. **Observer les changements** : Observez les changements d'état dans la grille.
 
-6. **Réinitialiser la Simulation** : Cliquez sur le bouton "Réinitialiser" pour réinitialiser la grille et les paramètres.
+6. **Réinitialiser la simulation** : Cliquez sur le bouton "Réinitialiser" pour réinitialiser la grille et les paramètres.
 
-7. **Sauvegarder l'État de la Grille** : Cliquez sur le bouton "Sauvegarder" pour enregistrer l'état final de la grille dans un fichier.
+7. **Sauvegarder l'état de la grille** : Cliquez sur le bouton "Sauvegarder" pour enregistrer l'état final de la grille dans un fichier.
 
 ## Exemple
 

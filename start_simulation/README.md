@@ -37,7 +37,7 @@ Par contre, notre application Flutter finale se trouve dans ce dossier `simulati
 
 4. **Activer le mode développeur** sur votre appareil ou émulateur Android. Cela est nécessaire car l'application contient une fonctionnalité de sauvegarde de fichier texte sur l'ordinateur. Pour activer le mode développeur, suivez les instructions appropriées pour votre appareil/emulateur.
 
-### Exécution de l'Application
+### Exécution de l'application
 
 1. **Connecter un appareil** (un appareil Android/iOS ou un émulateur).
 

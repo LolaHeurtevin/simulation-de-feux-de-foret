@@ -1,5 +1,4 @@
-# Projet de simulation de feux de foret version Dart sans Flutter
-
+# Projet de simulation de feux de foret 
 Ce projet a pour ambition de réaliser un simulateur de feux de forêt. Les utilisateurs peuvent sélectionner les cellules à enflammer au début de la simulation, configurer les paramètres de simulation (climat, terrain, vent), et définir le nombre de tours, puis exécuter la simulation.
 
 # Attention

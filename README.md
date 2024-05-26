@@ -33,7 +33,9 @@ dart main.dart
 
 ## Compiler le projet vers une plateforme cible
 
-Les instructions pour compiler le projet en Flutter avec une interface graphique se trouvent dans ./start_simulation/README.MD dans la section "Configuration du projet".
+Les instructions pour compiler le projet en Flutter avec une interface graphique se trouvent dans ./start_simulation/README.MD dans la section "Configuration du projet" et "Exécution de l'application"
+![image](https://github.com/LolaHeurtevin/simulation-de-feux-de-foret/assets/143880988/9a8c0e95-4b07-4018-a85a-1cbeb9bc4940)
+
 
 ## Lancer les tests
 

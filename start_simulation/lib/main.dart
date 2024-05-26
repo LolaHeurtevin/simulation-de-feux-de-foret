@@ -7,6 +7,7 @@ void main() {
   runApp(const MyApp());
 }
 
+// Classe représentant une cellule dans la simulation de feu de forêt
 class Cell {
   String state;
   int index;
@@ -18,6 +19,7 @@ class Cell {
         fireDuration = 0;
 }
 
+// Fonction pour générer une liste de cellules selon le terrain choisi
 List<Cell> cellsList(int numberOfCells, Terrain terrain, Random random) {
   List<Cell> cells = List<Cell>.generate(numberOfCells, (index) => Cell('inflammable', index));
   int inflammableCells;
@@ -91,6 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
     resetSimulation();
   }
 
+  // Fonction pour gérer la confirmation des paramètres et lancer la simulation
   void _handleConfirmation() {
     List<int> indices = [];
     for (int i = 0; i < selectedIndices.length; i++) {
@@ -118,6 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+  // Fonction pour réinitialiser la simulation
   void resetSimulation() {
     setState(() {
       cells = cellsList(24, selectedTerrain ?? Terrain.continu, random);
@@ -126,6 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  // Fonction pour définir les cellules enflammées au début de la simulation
   List<Cell> setBurningCell(List<Cell> cellList, List<int> startingCells) {
     for (int i = 0; i < cellList.length; i++) {
       if (cellList[i].state != 'inerte') {
@@ -144,11 +149,13 @@ class _MyHomePageState extends State<MyHomePage> {
     return cellList;
   }
 
+  // Fonction pour initialiser la simulation avec les paramètres donnés
   InitialisationSimulation initialiserSimulation(
       Climat climat, Terrain terrain, Wind wind) {
     return InitialisationSimulation(climat, terrain, wind);
   }
 
+  // Fonction pour simuler les rounds de la simulation
   void simulateRounds(List<Cell> cells, int rounds, Wind wind, Climat climat) {
     for (int round = 1; round <= rounds; round++) {
       List<int> newFires = [];
@@ -183,27 +190,26 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-List<int> getNeighbors(int index, int length) {
-  List<int> neighbors = [];
-  int numRows = (length / 6).ceil();
+  // Fonction pour obtenir les voisins d'une cellule
+  List<int> getNeighbors(int index, int length) {
+    List<int> neighbors = [];
+    if (index % 6 != 0) {
+      neighbors.add(index - 1); // Voisin de gauche
+    }
+    if (index % 6 != 5) {
+      neighbors.add(index + 1); // Voisin de droite
+    }
+    if (index >= 6) {
+      neighbors.add(index - 6); // Voisin du haut
+    }
+    if (index < length - 6) {
+      neighbors.add(index + 6); // Voisin du bas
+    }
 
-  if (index % 6 != 0) {
-    neighbors.add(index - 1); // Left neighbor
-  }
-  if (index % 6 != 5) {
-    neighbors.add(index + 1); // Right neighbor
-  }
-  if (index >= 6) {
-    neighbors.add(index - 6); // Top neighbor
-  }
-  if (index < length - 6) {
-    neighbors.add(index + 6); // Bottom neighbor
+    return neighbors;
   }
 
-  return neighbors;
-}
-
-
+  // Fonction pour mettre à jour l'état d'une cellule en fonction du vent et du climat
   void updateCellState(Cell cell, Wind wind, Climat climat, int round) {
     if (cell.state == 'enflammée') {
       if (cell.fireDuration < 2) {
@@ -230,6 +236,7 @@ List<int> getNeighbors(int index, int length) {
     }
   }
 
+  // Fonction pour obtenir la probabilité d'incendie en fonction du climat
   double getFireProbability(Climat climat) {
     switch (climat) {
       case Climat.humid:
@@ -245,6 +252,7 @@ List<int> getNeighbors(int index, int length) {
     }
   }
 
+  // Fonction pour obtenir la force du vent en fonction de son type
   int windForce(Wind wind) {
     switch (wind) {
       case Wind.none:
@@ -260,6 +268,7 @@ List<int> getNeighbors(int index, int length) {
     }
   }
 
+  // Fonction pour enflammer les voisins d'une cellule
   void igniteNeighbors(int index, Climat climat, int round) {
     List<int> neighbors = getNeighbors(index, cells.length);
     for (int neighborIndex in neighbors) {
@@ -274,6 +283,7 @@ List<int> getNeighbors(int index, int length) {
     }
   }
 
+  // Fonction pour enregistrer l'état final de la grille dans un fichier
   Future<void> _saveGridToFile() async {
     final directory = await getApplicationDocumentsDirectory();
     final path = '${directory.path}/grid_state.txt';
@@ -287,6 +297,7 @@ List<int> getNeighbors(int index, int length) {
     );
   }
 
+  // Fonction pour obtenir la couleur en fonction de l'état de la cellule
   Color getColorForState(String state) {
     switch (state) {
       case 'inflammable':
@@ -304,6 +315,7 @@ List<int> getNeighbors(int index, int length) {
     }
   }
 
+  // Fonction pour obtenir la couleur du texte en fonction de l'état de la cellule
   Color getTextColorForState(String state) {
     switch (state) {
       case 'inflammable':

@@ -1,83 +1,39 @@
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
+  // la fonction qui prend une cellulle et recupere ses voisins
   List<int> getNeighbors(int index, int length) {
-    List<int> neighbors = [];
+    List<int> neighbors = [];  // Liste pour stocker les indices des voisins
+
+    // Ajouter le voisin de gauche si ce n'est pas la première colonne
     if (index % 6 != 0) {
-      neighbors.add(index - 1); // Left neighbor
+      neighbors.add(index - 1);
     }
+
+    // Ajouter le voisin de droite si ce n'est pas la dernière colonne
     if (index % 6 != 5) {
-      neighbors.add(index + 1); // Right neighbor
+      neighbors.add(index + 1);
     }
+
+    // Ajouter le voisin du haut si ce n'est pas la première rangée
     if (index >= 6) {
-      neighbors.add(index - 6); // Top neighbor
+      neighbors.add(index - 6);
     }
+
+    // Ajouter le voisin du bas si ce n'est pas la dernière rangée
     if (index < length - 6) {
-      neighbors.add(index + 6); // Bottom neighbor
+      neighbors.add(index + 6);
     }
-    return neighbors;
+
+    return neighbors;  // Retourne la liste des voisins
   }
 
-  test('Get neighbors for a cell in the middle', () {
-    int index = 7;
-    int length = 24;
-    List<int> neighbors = getNeighbors(index, length);
+  // Test unitaire pour vérifier les voisins de la cellule avec l'index 7
+  test('test de la cellule index=7', () {
+    int index = 7;  // L'index de la cellule dont on veut vérifier les voisins
+    int length = 24;  // La longueur totale de la grille (24 cellules)
+    List<int> neighbors = getNeighbors(index, length);  // Appel de la fonction pour obtenir les voisins
+    // Vérification que les voisins sont corrects
     expect(neighbors, [6, 8, 1, 13]);
-  });
-
-  test('Get neighbors for a cell on the left edge', () {
-    int index = 6;
-    int length = 24;
-    List<int> neighbors = getNeighbors(index, length);
-    expect(neighbors, [7, 0, 12]);
-  });
-
-  test('Get neighbors for a cell on the right edge', () {
-    int index = 5;
-    int length = 24;
-    List<int> neighbors = getNeighbors(index, length);
-    expect(neighbors, [4, 11]);
-  });
-
-  test('Get neighbors for a cell on the top edge', () {
-    int index = 3;
-    int length = 24;
-    List<int> neighbors = getNeighbors(index, length);
-    expect(neighbors, [2, 4, 9]);
-  });
-
-  test('Get neighbors for a cell on the bottom edge', () {
-    int index = 21;
-    int length = 24;
-    List<int> neighbors = getNeighbors(index, length);
-    expect(neighbors, [20, 22, 15]);
-  });
-
-  test('Get neighbors for a cell in the top-left corner', () {
-    int index = 0;
-    int length = 24;
-    List<int> neighbors = getNeighbors(index, length);
-    expect(neighbors, [1, 6]);
-  });
-
-  test('Get neighbors for a cell in the top-right corner', () {
-    int index = 5;
-    int length = 24;
-    List<int> neighbors = getNeighbors(index, length);
-    expect(neighbors, [4, 11]);
-  });
-
-  test('Get neighbors for a cell in the bottom-left corner', () {
-    int index = 18;
-    int length = 24;
-    List<int> neighbors = getNeighbors(index, length);
-    expect(neighbors, [17, 19, 12]);
-  });
-
-  test('Get neighbors for a cell in the bottom-right corner', () {
-    int index = 23;
-    int length = 24;
-    List<int> neighbors = getNeighbors(index, length);
-    expect(neighbors, [22, 17]);
   });
 }

@@ -60,3 +60,6 @@ Lien vers le cahier des charges : https://docs.google.com/document/d/1S-3BDyFjcK
 ## Difficultés et commentaires version Dart
 
 La partie la plus compliqué du projet a été la gestion du vent. Dans l'énoncé, chaque force de vent entraîne un calcul différent des cellules voisines et des probabilités d'envoi des brandons pour chaque cellule. En raison des contraintes de temps que nous avons et des autres projets et dossiers sur lesquels nous devions travailler simulatnément, nous avons fait le choix d'adapter l'énoncé pour que la liste des cellules voisines soit toujours la même et que seule la probabilité d'envoi des brandons change avec la force du vent.
+
+## Remerciements
+Nous souhaitons exprimer notre gratitude à M. Paul pour ses précieux conseils et pour nous avoir donné l'opportunité de découvrir le développement d'applications desktop avec Flutter. Merci également à la communauté Stack Overflow pour son aide précieuse.

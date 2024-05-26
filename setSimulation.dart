@@ -99,7 +99,7 @@ Terrain chooseTerrain() {
   print('1. Continue');
   print('2. Peu espacée');
   print('3. Espacée');
-  print('4. Clairsemé');
+  print('4. Clairsemée');
   
   stdout.write('Entrez le numéro correspondant au type de terrain : ');
   int choix = int.parse(stdin.readLineSync()!);
